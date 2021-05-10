@@ -29,7 +29,7 @@ namespace DRXPROJ.Manage
         }
         public bool Exists(Costcenters obj)
         {
-            if (_myList.Exists(x => x.Equals(obj)))
+            if (_myList.Exists(x => x.EmployeeId.Equals(obj.EmployeeId)))
             {
                 return true;
             }

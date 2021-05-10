@@ -35,7 +35,7 @@ namespace DRXPROJ.Controllers
         // POST api/<EmployeeController>
         [HttpPost]
         public void Post([FromBody] Employee value)
-        {
+        {    
             _manage.Add(value);
         }
 

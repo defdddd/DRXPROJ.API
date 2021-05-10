@@ -29,7 +29,7 @@ namespace DRXPROJ.Manage
         }
         public bool Exists(AssetEmployee obj)
         {
-            if (_myList.Exists(x => x.Equals(obj)))
+            if (_myList.Exists(x => x.AssetId.Equals(obj.AssetId) && x.EmployeeId.Equals(obj.EmployeeId)))
             {
                 return true;
             }

@@ -18,6 +18,8 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
             {
                 var e = new Employee();
                 e.Id = dt.Rows[i].Field<int>("Id");
+                e.Password = dt.Rows[i].Field<string>("Password");
+                e.UserName = dt.Rows[i].Field<string>("UserName");
                 e.Name = dt.Rows[i].Field<string>("Name");
                 e.CostCenter = dt.Rows[i].Field<string>("CostCenter");
                 e.ManagersName = dt.Rows[i].Field<string>("ManagersName");
@@ -34,7 +36,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
 
         protected override string InsertString(Employee Value)
         {
-            return $"insert into Employee (Name,CostCenter,ManagersName,IsManager) values ('{Value.Name}','{Value.CostCenter}','{Value.ManagersName}','{Value.IsManager}')";
+            return $"insert into Employee (UserName,Password,Name,CostCenter,ManagersName,IsManager) values ('{Value.UserName}','{Value.Password}','{Value.Name}','{Value.CostCenter}','{Value.ManagersName}','{Value.IsManager}')";
         }
 
         protected override string UpdateString(Employee Value)
