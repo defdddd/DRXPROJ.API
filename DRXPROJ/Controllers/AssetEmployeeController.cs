@@ -25,7 +25,7 @@ namespace DRXPROJ.Controllers
         }
 
         // GET api/<AssetEmployeeController>/5
-        [HttpGet("{id}")]
+        [HttpGet("GetBy", Name = "GetByTwoIds")]
         public AssetEmployee Get(int id,int id2)
         {
             return _manage.GetById(id,id2);
@@ -46,7 +46,7 @@ namespace DRXPROJ.Controllers
         }
 
         // DELETE api/<AssetEmployeeController>/5
-        [HttpDelete("{id}")]
+        [HttpGet("delete", Name = "APIDelete")]
         public void Delete(int id,int id2)
         {
             _manage.Remove(id,id2);
