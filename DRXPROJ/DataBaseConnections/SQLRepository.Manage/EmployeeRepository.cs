@@ -41,7 +41,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
 
         protected override string UpdateString(Employee Value)
         {
-            return $"update Employee set Name='{Value.Name}', CostCenter='{Value.CostCenter}', ManagersName='{Value.ManagersName}', IsManager='{Value.IsManager}' where Id={Value.Id}";
+            return $"update Employee set UserName='{Value.UserName}', Password='{Value.Password}', Name='{Value.Name}', CostCenter='{Value.CostCenter}', ManagersName='{Value.ManagersName}', IsManager='{Value.IsManager}' where Id={Value.Id}";
         }
     }
 }
