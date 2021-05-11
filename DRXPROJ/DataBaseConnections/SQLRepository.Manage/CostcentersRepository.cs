@@ -20,7 +20,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
                 e.Nr = dt.Rows[i].Field<int>("Nr");
                 e.Name = dt.Rows[i].Field<string>("Name");
                 e.EmployeeId = dt.Rows[i].Field<int>("EmployeeId");
-                e.DeleteFlag = dt.Rows[i].Field<bool>("DaleteFlag");
+                e.DeleteFlag = dt.Rows[i].Field<bool>("DeleteFlag");
                 list.Add(e);
             }
             return list;
