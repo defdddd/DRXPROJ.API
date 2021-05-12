@@ -46,7 +46,7 @@ namespace DRXPROJ.Controllers
         }
 
         // DELETE api/<AssetEmployeeController>/5
-        [HttpGet("delete", Name = "APIDelete")]
+        [HttpDelete("delete", Name = "APIDelete")]
         public void Delete(int id,int id2)
         {
             _manage.Remove(id,id2);

@@ -32,6 +32,24 @@ namespace DRXPROJ.Controllers
             return _manage.GetById(id);
         }
 
+        [HttpGet("GetByUsernamePassword", Name = "GetByTwoStrings")]
+        public bool Get(string username, string password)
+        {
+            var employee = _manage.GetAll().Where(x => x.UserName.Equals(username) && x.Password.Equals(password));
+            if (employee != null) return true;
+            return false;
+        }
+
+        [HttpGet("Exists", Name = "ValidateTheUsername")]
+        public bool Get(string username)
+        {
+            var employee = _manage.GetAll().Where(x => x.UserName.Equals(username));
+            if (employee != null) return true;
+            return false;
+        }
+
+
+
         // POST api/<EmployeeController>
         [HttpPost]
         public void Post([FromBody] Employee value)
