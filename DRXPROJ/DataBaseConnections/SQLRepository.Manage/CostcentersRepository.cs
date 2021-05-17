@@ -17,7 +17,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 var e = new Costcenters();
-                e.Nr = dt.Rows[i].Field<int>("Nr");
+                e.Id = dt.Rows[i].Field<int>("Nr");
                 e.Name = dt.Rows[i].Field<string>("Name");
                 e.EmployeeId = dt.Rows[i].Field<int>("EmployeeId");
                 e.DeleteFlag = dt.Rows[i].Field<bool>("DeleteFlag");
@@ -38,7 +38,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
 
         protected override string UpdateString(Costcenters Value)
         {
-            return $"update Costcenters set EmployeeId='{Value.EmployeeId}', Name='{Value.Name}', DeleteFlag='{Value.DeleteFlag}' where Nr={Value.Nr}";
+            return $"update Costcenters set EmployeeId='{Value.EmployeeId}', Name='{Value.Name}', DeleteFlag='{Value.DeleteFlag}' where Nr={Value.Id}";
         }
     }
 }

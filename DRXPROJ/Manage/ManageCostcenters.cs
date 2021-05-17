@@ -41,9 +41,9 @@ namespace DRXPROJ.Manage
             return _myList;
         }
 
-        public Costcenters GetById(int nr, [Optional] int id2)
+        public Costcenters GetById(int Id , [Optional] int id2)
         {
-            return _myList.Where(x => x.Nr.Equals(nr)).FirstOrDefault();
+            return _myList.Where(x => x.Id .Equals(Id )).FirstOrDefault();
         }
 
         public int GetLastId()
@@ -51,10 +51,10 @@ namespace DRXPROJ.Manage
             throw new NotImplementedException();
         }
 
-        public void Remove(int nr, [Optional] int id2)
+        public void Remove(int Id , [Optional] int id2)
         {
-            _myList.Remove(_myList.Where(x => x.Nr.Equals(nr) ).FirstOrDefault());
-            _repository.Delete(nr);
+            _myList.Remove(_myList.Where(x => x.Id .Equals(Id ) ).FirstOrDefault());
+            _repository.Delete(Id );
         }
 
         public void Update(Costcenters obj)
@@ -62,7 +62,7 @@ namespace DRXPROJ.Manage
             if (obj != null)
             {
                 _repository.Update(obj);
-                _myList.Remove(_myList.Where(x => x.Nr.Equals(obj.Nr)).FirstOrDefault());
+                _myList.Remove(_myList.Where(x => x.Id .Equals(obj.Id )).FirstOrDefault());
                 _myList.Add(obj);
             }
         }

@@ -7,7 +7,7 @@ namespace DRXPROJ.Models
 {
     public class Costcenters
     {
-        public int Nr { get; set; }
+        public int Id { get; set; }
         public int EmployeeId { get; set; }
         public string Name { get; set; }
         public bool DeleteFlag { get; set; } = false;
