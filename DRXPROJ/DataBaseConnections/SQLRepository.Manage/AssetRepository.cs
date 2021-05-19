@@ -34,7 +34,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
 
         protected override string InsertString(Asset Value)
         {
-            return $"insert into Asset (Name,Description,Date,CstcNr) value ('{Value.Name}','{Value.Description}','{Value.Date}',{Value.CstcNr})";
+            return $"insert into Asset (Name,Description,Date,CstcNr) values ('{Value.Name}','{Value.Description}','{Value.Date}',{Value.CstcNr})";
         }
 
         protected override string UpdateString(Asset Value)
