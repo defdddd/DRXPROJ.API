@@ -37,7 +37,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
 
         protected override string InsertString(AssetEmployee Value)
         {
-            return $"insert into AssetEmployee (AssetId,EmployeeId,DateFrom,DateTo,CstcNr,EndOfLife) values ({Value.AssetId},{Value.EmployeeId},'{Value.From}','{Value.To}',{Value.CstcNr},'{Value.EndOfLife})";
+            return $"insert into AssetEmployee (AssetId,EmployeeId,DateFrom,DateTo,CstcNr,EndOfLife) values ({Value.AssetId},{Value.EmployeeId},'{Value.From}','{Value.To}',{Value.CstcNr},'{Value.EndOfLife}')";
         }
 
         protected override string UpdateString(AssetEmployee Value)
