@@ -16,12 +16,14 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
             var list = new List<Asset>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                var e = new Asset();
-                e.Id= dt.Rows[i].Field<int>("Id");
-                e.Name = dt.Rows[i].Field<string>("Name");
-                e.Description = dt.Rows[i].Field<string>("Description");
-                e.Date = dt.Rows[i].Field<DateTime>("Date");
-                e.CstcNr = dt.Rows[i].Field<int>("CstcNr");
+                var e = new Asset
+                {
+                    Id = dt.Rows[i].Field<int>("Id"),
+                    Name = dt.Rows[i].Field<string>("Name"),
+                    Description = dt.Rows[i].Field<string>("Description"),
+                    Date = dt.Rows[i].Field<DateTime>("Date"),
+                    CstcNr = dt.Rows[i].Field<int>("CstcNr")
+                };
                 list.Add(e);
             }
             return list;

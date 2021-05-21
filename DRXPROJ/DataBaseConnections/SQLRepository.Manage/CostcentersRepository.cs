@@ -16,11 +16,13 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
             var list = new List<Costcenters>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                var e = new Costcenters();
-                e.Id = dt.Rows[i].Field<int>("Nr");
-                e.Name = dt.Rows[i].Field<string>("Name");
-                e.EmployeeId = dt.Rows[i].Field<int>("EmployeeId");
-                e.DeleteFlag = dt.Rows[i].Field<bool>("DeleteFlag");
+                var e = new Costcenters
+                {
+                    Id = dt.Rows[i].Field<int>("Nr"),
+                    Name = dt.Rows[i].Field<string>("Name"),
+                    EmployeeId = dt.Rows[i].Field<int>("EmployeeId"),
+                    DeleteFlag = dt.Rows[i].Field<bool>("DeleteFlag")
+                };
                 list.Add(e);
             }
             return list;

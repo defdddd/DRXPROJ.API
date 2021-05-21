@@ -16,14 +16,16 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
             var list = new List<Employee>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                var e = new Employee();
-                e.Id = dt.Rows[i].Field<int>("Id");
-                e.Password = dt.Rows[i].Field<string>("Password");
-                e.UserName = dt.Rows[i].Field<string>("UserName");
-                e.Name = dt.Rows[i].Field<string>("Name");
-                e.CostCenter = dt.Rows[i].Field<string>("CostCenter");
-                e.ManagersName = dt.Rows[i].Field<string>("ManagersName");
-                e.IsManager = dt.Rows[i].Field<bool>("IsManager");
+                var e = new Employee
+                {
+                    Id = dt.Rows[i].Field<int>("Id"),
+                    Password = dt.Rows[i].Field<string>("Password"),
+                    UserName = dt.Rows[i].Field<string>("UserName"),
+                    Name = dt.Rows[i].Field<string>("Name"),
+                    CostCenter = dt.Rows[i].Field<string>("CostCenter"),
+                    ManagersName = dt.Rows[i].Field<string>("ManagersName"),
+                    IsManager = dt.Rows[i].Field<bool>("IsManager")
+                };
                 list.Add(e);
             }
             return list;
