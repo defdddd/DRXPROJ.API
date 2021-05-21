@@ -30,7 +30,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
 
         protected override string DeleteString(int id, int id2)
         {
-            return $"delete from Costcenters where Id={id}";
+            return $"delete from Costcenters where Nr={id}";
         }
 
         protected override string InsertString(Costcenters Value)
