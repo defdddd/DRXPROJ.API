@@ -50,9 +50,9 @@ namespace DRXPROJ.Controllers
 
         // POST api/<EmployeeController>
         [HttpPost]
-        public void Post([FromBody] Employee value)
+        public Employee Post([FromBody] Employee value)
         {    
-            _manage.Add(value);
+            return _manage.Add(value);
         }
 
         // PUT api/<EmployeeController>/5

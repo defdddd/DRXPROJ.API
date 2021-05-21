@@ -33,9 +33,9 @@ namespace DRXPROJ.Controllers
 
         // POST api/<AssetEmployeeController>
         [HttpPost]
-        public void Post([FromBody] AssetEmployee value)
+        public AssetEmployee Post([FromBody] AssetEmployee value)
         {
-            _manage.Add(value);
+            return _manage.Add(value);
         }
 
         // PUT api/<AssetEmployeeController>/5

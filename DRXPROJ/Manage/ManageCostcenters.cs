@@ -19,13 +19,14 @@ namespace DRXPROJ.Manage
             _myList = repository.GetAll();
         }
 
-        public void Add(Costcenters obj)
+        public Costcenters Add(Costcenters obj)
         {
             if (obj != null)
             {
                 _myList.Add(obj);
                 _repository.Insert(obj);
             }
+          return _repository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault();
         }
         public bool Exists(Costcenters obj)
         {

@@ -19,13 +19,14 @@ namespace DRXPROJ.Manage
             _myList = repository.GetAll();
         }
 
-        public void Add(AssetEmployee obj)
+        public AssetEmployee Add(AssetEmployee obj)
         {
             if (obj != null)
             {
                 _myList.Add(obj);
                 _repository.Insert(obj);
             }
+         return obj;
         }
         public bool Exists(AssetEmployee obj)
         {

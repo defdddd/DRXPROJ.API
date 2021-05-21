@@ -33,9 +33,9 @@ namespace DRXPROJ.Controllers
 
         // POST api/<CostcentersController>
         [HttpPost]
-        public void Post([FromBody] Costcenters value)
+        public Costcenters Post([FromBody] Costcenters value)
         {
-            _manage.Add(value);
+            return _manage.Add(value);
         }
 
         // PUT api/<CostcentersController>/5

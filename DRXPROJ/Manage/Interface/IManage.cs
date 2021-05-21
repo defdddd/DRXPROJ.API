@@ -8,7 +8,7 @@ namespace DRXPROJ.Manage.Interface
 {
     public interface IManage<T>
     {
-        void Add(T obj);
+        T Add(T obj);
         void Remove(int id,[Optional]int id2);
         List<T> GetAll();
         void Update(T obj);
