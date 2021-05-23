@@ -11,7 +11,7 @@ namespace DRXPROJ.Manage.Interface
         T Add(T obj);
         void Remove(int id,[Optional]int id2);
         List<T> GetAll();
-        void Update(T obj);
+        T Update(T obj);
         bool Exists(T obj);
         int GetLastId();
         T GetById(int id, [Optional] int id2);

@@ -25,8 +25,9 @@ namespace DRXPROJ.Manage
             {
                 _myList.Add(obj);
                 _repository.Insert(obj);
+                return _repository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault();
             }
-         return _repository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault();
+            return obj;
         }
         public bool Exists(Employee obj)
         {
@@ -58,7 +59,7 @@ namespace DRXPROJ.Manage
             _repository.Delete(Id);
         }
 
-        public void Update(Employee obj)
+        public Employee Update(Employee obj)
         {
             if (obj != null)
             {
@@ -66,6 +67,7 @@ namespace DRXPROJ.Manage
                 _myList.Remove(_myList.Where(x => x.Id.Equals(obj.Id)).FirstOrDefault());
                 _myList.Add(obj);
             }
+            return obj;
         }
     }
 }

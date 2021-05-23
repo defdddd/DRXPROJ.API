@@ -40,9 +40,9 @@ namespace DRXPROJ.Controllers
 
         // PUT api/<AssetController>/5
         [HttpPut("{id}")]
-        public void Put([FromBody] Asset value)
+        public Asset Put([FromBody] Asset value)
         {
-            _manage.Update(value);
+            return _manage.Update(value);
         }
 
         // DELETE api/<AssetController>/5

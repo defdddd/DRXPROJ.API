@@ -58,7 +58,7 @@ namespace DRXPROJ.Manage
             _repository.Delete(assetid, employeeid);
         }
 
-        public void Update(AssetEmployee obj)
+        public AssetEmployee Update(AssetEmployee obj)
         {
             if (obj != null)
             {
@@ -66,6 +66,7 @@ namespace DRXPROJ.Manage
                 _myList.Remove(_myList.Where(x => x.AssetId.Equals(obj.AssetId) && x.EmployeeId.Equals(obj.EmployeeId)).FirstOrDefault());
                 _myList.Add(obj);
             }
+            return obj;
         }
 
     }

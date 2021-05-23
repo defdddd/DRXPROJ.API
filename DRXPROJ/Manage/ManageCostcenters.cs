@@ -23,10 +23,12 @@ namespace DRXPROJ.Manage
         {
             if (obj != null)
             {
+                if (_myList.Exists(x => x.EmployeeId.Equals(obj.EmployeeId) || x.Name.Equals(obj.Name)))  return null;
                 _myList.Add(obj);
                 _repository.Insert(obj);
+                return _repository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault();
             }
-          return _repository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault();
+            return obj;
         }
         public bool Exists(Costcenters obj)
         {
@@ -58,14 +60,18 @@ namespace DRXPROJ.Manage
             _repository.Delete(Id );
         }
 
-        public void Update(Costcenters obj)
+        public Costcenters Update(Costcenters obj)
         {
             if (obj != null)
             {
+                if (_myList.Exists(x => x.Name.Equals(obj.Name))) return null;
+                if (_myList.Exists(x => x.Id.Equals(obj.Id) && x == obj)) return null;
                 _repository.Update(obj);
-                _myList.Remove(_myList.Where(x => x.Id .Equals(obj.Id )).FirstOrDefault());
+                _myList.Remove(_myList.Where(x => x.Id .Equals(obj.Id)).FirstOrDefault());
                 _myList.Add(obj);
+              
             }
+            return obj;
         }
 
     }

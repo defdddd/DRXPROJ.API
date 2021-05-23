@@ -25,8 +25,9 @@ namespace DRXPROJ.Manage
             {
                 _myList.Add(obj);
                 _repository.Insert(obj);
+                return _repository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault();
             }
-         return _repository.GetAll().OrderByDescending(x => x.Id).FirstOrDefault();
+            return null;
         }
         public bool Exists(Asset obj)
         {
@@ -59,14 +60,16 @@ namespace DRXPROJ.Manage
             _repository.Delete(id);      
         }
 
-        public void Update(Asset obj)
+        public Asset Update(Asset obj)
         {
             if (obj != null)
             {
                 _repository.Update(obj);
                 _myList.Remove(_myList.Where(x => x.Id.Equals(obj.Id)).FirstOrDefault());
                 _myList.Add(obj);
+                
             }
+            return obj;
         }
     }
 }
