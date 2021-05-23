@@ -40,7 +40,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
 
         protected override string UpdateString(Costcenters Value)
         {
-            return $"update Costcenters set EmployeeId='{Value.EmployeeId}', Name='{Value.Name}', DeleteFlag='{Value.DeleteFlag}' where Nr={Value.Id}";
+            return $"update Costcenters set EmployeeId={Value.EmployeeId}, Name='{Value.Name}', DeleteFlag='{Value.DeleteFlag}' where Nr={Value.Id}";
         }
     }
 }

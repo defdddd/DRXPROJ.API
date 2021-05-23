@@ -42,7 +42,7 @@ namespace DRXPROJ.DataBaseConnections.SQLRepository.Manage
 
         protected override string UpdateString(AssetEmployee Value)
         {
-            return $"update AssetEmployee set DateFrom='{Value.From}', DateTo='{Value.To}', CstcNr={Value.CstcNr} where AssetId={Value.AssetId} AND EmployeeId={Value.EmployeeId}";
+            return $"update AssetEmployee set DateFrom='{Value.From}', DateTo='{Value.To}', CstcNr={Value.CstcNr}, EndOfLife='{Value.EndOfLife}'  where AssetId={Value.AssetId} AND EmployeeId={Value.EmployeeId}";
         }
     }
 }
